@@ -1,0 +1,16 @@
+name: CI
+on:
+  repository_dispatch:
+    types: [preview_image_build]
+    # create a separate workflow and event type for image retags
+
+jobs:
+  prebuild:
+    runs-on: ubuntu-latest
+    steps:
+    # - uses: actions/checkout@v2
+
+    - name: Echo Foobar
+      id: echo_foobar
+      run: |
+        echo "foobar"
